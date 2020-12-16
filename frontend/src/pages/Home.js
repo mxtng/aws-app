@@ -11,7 +11,7 @@ const Home = () => {
     if (!key) return;
 
     setLoading(true);
-    axios.get(`http://localhost:5000/api/player/${key}`).then((res) => {
+    axios.get(`/api/player/${key}`).then((res) => {
       setPlayerData(res.data[0]);
       setLoading(false);
     });
@@ -25,7 +25,7 @@ const Home = () => {
     <div className='container'>
       <h1 className='m-4 text-center text-info'>Player's Profile</h1>
       <div className='row'>
-        <div className='col-md-3'>
+        <div className='col-md-4'>
           <Menu
             onClick={handleClick}
             style={{ width: 256 }}
